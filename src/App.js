@@ -7,6 +7,7 @@ import { Jackpot } from "./components/jackpot/Jackpot";
 import { Games } from "./components/games/Games";
 import { Welcome } from "./components/welcome/Welcome";
 import { Faq } from "./components/faq/Faq";
+import { Allgames } from "./components/allgames/Allgames";
 
 function App() {
   return (
@@ -25,7 +26,9 @@ function App() {
 
       <Jackpot />
 
-	  <Games />
+      <Allgames/>
+
+	    <Games />
 
       <Welcome />
 
