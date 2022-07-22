@@ -10,7 +10,7 @@ import { Faq } from "./components/faq/Faq";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Preloader />
 
       <ScrollTop />
