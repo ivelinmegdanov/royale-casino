@@ -2923,9 +2923,13 @@ ul li {
 .allgames-game {
   width: 350px;
   height: 350px;
+  padding: 25px;
+}
+.game-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
 }
 .banner-styling-first{
   background-image: url(../images/bannner/bg-2.jpg);

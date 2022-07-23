@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const Header = () => {
     return (
         <header className="header-section style2">
@@ -5,23 +7,23 @@ export const Header = () => {
           <div className="header-holder d-flex flex-wrap justify-content-between align-items-center">
             <div className="brand-logo d-none d-lg-inline-block py-2">
               <div className="logo">
-                <a href="index.html">
+                <Link to="/">
                   <img src="images/logo/logo.png" alt="logo" />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="header-menu-part">
               <div className="header-bottom">
                 <div className="header-wrapper justify-content-lg-end">
                   <div className="mobile-logo d-lg-none">
-                    <a href="index.html">
+                    <Link to="/">
                       <img src="images/logo/logo.png" alt="logo" />
-                    </a>
+                    </Link>
                   </div>
                   <div className="menu-area">
                     <ul className="menu">
                       <li>
-                        <a href="index.html">Home</a>
+                        <Link to="/">Home</Link>
                       </li>
 
                       <li>
@@ -82,7 +84,7 @@ export const Header = () => {
                         </ul>
                       </li>
                       <li>
-                        <a href="tournament.html">games</a>
+                        <Link to="/games">games</Link>
                       </li>
                       <li>
                         <a href="tournament.html">promotions</a>

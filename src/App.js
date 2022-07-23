@@ -2,40 +2,26 @@ import { Preloader } from "./components/common/Preloader";
 import { ScrollTop } from "./components/common/ScrollTop";
 import { Header } from "./components/common/Header";
 import { Footer } from "./components/common/Footer";
-import { Banner } from "./components/banner/Banner";
-import { Jackpot } from "./components/jackpot/Jackpot";
-import { Games } from "./components/games/Games";
-import { Welcome } from "./components/welcome/Welcome";
-import { Faq } from "./components/faq/Faq";
+import { Home } from "./components/pages/Home";
 import { Allgames } from "./components/allgames/Allgames";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Preloader />
-
-      <ScrollTop />
-
-      <div className="body-shape d-none">
-        <img src="images/shape/body-shape.png" alt="shape" />
+    <Router>
+      <div className="App">
+        <Header />
+        <Preloader />
+        <ScrollTop />
+        <div className="content">
+          <Routes>
+            <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/games" element={<Allgames />}></Route>
+          </Routes>
+        </div>
+        <Footer />
       </div>
-
-      <Header />
-
-      <Banner />
-
-      <Jackpot />
-
-      <Allgames/>
-
-	    <Games />
-
-      <Welcome />
-
-      <Faq />
-
-      <Footer />
-    </div>
+    </Router>
   );
 }
 
