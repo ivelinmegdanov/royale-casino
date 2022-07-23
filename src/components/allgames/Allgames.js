@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { GameList } from "./GameList";
 import { useFetch } from "../customhooks/useFetch";
 
