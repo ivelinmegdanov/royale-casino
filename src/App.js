@@ -4,6 +4,9 @@ import { Header } from "./components/common/Header";
 import { Footer } from "./components/common/Footer";
 import { Home } from "./components/pages/Home";
 import { Allgames } from "./components/allgames/Allgames";
+import { NotFound } from "./components/pages/NotFound";
+import { Register } from "./components/pages/Register";
+import { Login } from "./components/pages/Login";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -16,7 +19,10 @@ function App() {
         <div className="content">
           <Routes>
             <Route exact path="/" element={<Home />}></Route>
+            <Route exact path="/login" element={<Login />}></Route>
+            <Route exact path="/register" element={<Register />}></Route>
             <Route exact path="/games" element={<Allgames />}></Route>
+            <Route exact path="*" element={<NotFound />}></Route>
           </Routes>
         </div>
         <Footer />

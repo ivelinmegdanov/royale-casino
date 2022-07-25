@@ -93,12 +93,12 @@ export const Header = () => {
                         <a href="contact.html">Contact</a>
                       </li>
                     </ul>
-                    <a href="login.html" className="login">
+                    <Link to="/login" className="login">
                       <i className="icofont-user"></i> <span>Log In</span>{" "}
-                    </a>
-                    <a href="signup.html" className="signup">
+                    </Link>
+                    <Link to="/register" className="signup">
                       <i className="icofont-users"></i> <span>Sign Up</span>
-                    </a>
+                    </Link>
 
                     <div className="header-bar d-lg-none">
                       <span></span>
