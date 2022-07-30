@@ -3,7 +3,7 @@ import { useFetch } from "../customhooks/useFetch";
 
 export const Allgames = () => {
 
-  const { data : games, isPending, error } = useFetch("http://localhost:8000/games");
+  const { data : games, isPending, error } = useFetch("https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games/-N8DZBd5QfV6uSsPwOuS.json");
 
   return (
     <section className="collection-section padding-top padding-bottom">

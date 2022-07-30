@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const GameList = (props) => {
     const games = props.games;
 
@@ -20,11 +22,11 @@ export const GameList = (props) => {
                     <div className="game__overlay">
                       <h4>{game.title}</h4>
                       <p>{game.author}</p>
-                      <a href="/" className="default-button">
+                      <Link to="/play" className="default-button">
                         <span>
                           play now <i className="icofont-circled-right" />
                         </span>{" "}
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>

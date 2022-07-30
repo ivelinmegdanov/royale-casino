@@ -7,6 +7,7 @@ import { Allgames } from "./components/allgames/Allgames";
 import { NotFound } from "./components/pages/NotFound";
 import { Register } from "./components/pages/Register";
 import { Login } from "./components/pages/Login";
+import { Play } from "./components/pages/Play";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -18,11 +19,12 @@ function App() {
         <ScrollTop />
         <div className="content">
           <Routes>
-            <Route exact path="/" element={<Home />}></Route>
-            <Route exact path="/login" element={<Login />}></Route>
-            <Route exact path="/register" element={<Register />}></Route>
-            <Route exact path="/games" element={<Allgames />}></Route>
-            <Route exact path="*" element={<NotFound />}></Route>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Register />}></Route>
+            <Route path="/games" element={<Allgames />}></Route>
+            <Route path="/play/:gameId" element={<Play />}></Route>
+            <Route path="*" element={<NotFound />}></Route>
           </Routes>
         </div>
         <Footer />
