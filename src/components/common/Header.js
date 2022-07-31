@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
-import { auth, db, logout } from "../../firebase";
+import { auth } from "../../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { LogAndReg } from '../buttons/LogAndReg';
+import { LogOut } from '../buttons/LogOut';
 
 export const Header = () => {
+  const [user] = useAuthState(auth);
     return (
         <header className="header-section style2">
         <div className="container">
@@ -94,13 +98,8 @@ export const Header = () => {
                         <a href="contact.html">Contact</a>
                       </li>
                     </ul>
-                    <Link to="/login" className="login">
-                      <i className="icofont-user"></i> <span>Log In</span>{" "}
-                    </Link>
-                    <Link to="/register" className="signup">
-                      <i className="icofont-users"></i> <span>Sign Up</span>
-                    </Link>
-                      <button className="icofont-users" onClick={logout}> <span>Logout</span></button>
+
+                    {!user ? <LogAndReg/> : <LogOut/>}
 
                     <div className="header-bar d-lg-none">
                       <span></span>
