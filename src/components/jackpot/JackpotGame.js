@@ -6,7 +6,7 @@ export const JackpotGame = (props) => {
   return (
     <div className="row g-4 justify-content-center">
       {games.map((game) => (
-        <div className="col-lg-4 col-sm-6 col-12">
+        <div key={game.id} className="col-lg-4 col-sm-6 col-12">
           <div className="game__item item-layer">
             <div className="game__inner text-center p-0">
               <div className="game__thumb mb-0">

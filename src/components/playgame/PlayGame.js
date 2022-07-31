@@ -1,8 +1,14 @@
 export const PlayGame = (game) => {
-    console.log(game);
   return (
-    <div>
-      <iframe src={game.link} width="640" height="480" />
+    <div className="play-container">
+      <div className="game-container">
+        <h2>{game.game.title} - {game.game.lines} Lines - {game.game.reels} Reels - x{game.game.maxwin} Max Win</h2>
+        <iframe
+          className="game-iframe"
+          title={game.game.title}
+          src={game.game.link}
+        />
+      </div>
     </div>
   );
 };

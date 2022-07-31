@@ -8,6 +8,7 @@ import { NotFound } from "./components/pages/NotFound";
 import { Register } from "./components/pages/Register";
 import { Login } from "./components/pages/Login";
 import { Play } from "./components/pages/Play";
+import Reset from "./components/pages/Reset";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path="/" element={<Home />}></Route>
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
+            <Route path="/reset" element={<Reset />}></Route>
             <Route path="/games" element={<Allgames />}></Route>
             <Route path="/play/:gameId" element={<Play />}></Route>
             <Route path="*" element={<NotFound />}></Route>

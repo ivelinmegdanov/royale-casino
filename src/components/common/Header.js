@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { auth, db, logout } from "../../firebase";
 
 export const Header = () => {
     return (
@@ -99,6 +100,7 @@ export const Header = () => {
                     <Link to="/register" className="signup">
                       <i className="icofont-users"></i> <span>Sign Up</span>
                     </Link>
+                      <button className="icofont-users" onClick={logout}> <span>Logout</span></button>
 
                     <div className="header-bar d-lg-none">
                       <span></span>

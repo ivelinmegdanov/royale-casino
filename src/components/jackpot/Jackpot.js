@@ -7,7 +7,7 @@ export const Jackpot = () => {
     isPending,
     error,
   } = useFetch(
-    "https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games/-N8DZBd5QfV6uSsPwOuS.json"
+    "https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games/-N8J2jMp_09UfqW0pXh2.json"
   );
   return (
     <div className="jaqport padding-top padding-bottom">

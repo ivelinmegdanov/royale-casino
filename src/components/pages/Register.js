@@ -1,57 +1,61 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useEffect, useState } from "react";
+import {
+  auth,
+  registerWithEmailAndPassword,
+  signInWithGoogle,
+} from "../../firebase";
 
 export const Register = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+  const register = () => {
+    if (!name) alert("Please enter name");
+    registerWithEmailAndPassword(name, email, password);
+  };
+  useEffect(() => {
+    if (loading) return;
+    if (user) navigate("/");
+  }, [user, loading]);
   return (
     <div className="login-section padding-top padding-bottom">
       <div className=" container">
         <div className="account-wrapper">
           <h3 className="title">Register Now</h3>
-          <form className="account-form text-start">
-            <div className="select-gender mb-3">
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio1"
-                  defaultValue="option1"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio1">
-                  Mr
-                </label>
-              </div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio2"
-                  defaultValue="option2"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio2">
-                  Mrs
-                </label>
-              </div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="inlineRadioOptions"
-                  id="inlineRadio3"
-                  defaultValue="option3"
-                />
-                <label className="form-check-label" htmlFor="inlineRadio3">
-                  Others
-                </label>
-              </div>
-            </div>
+          <div className="account-form text-start">
             <div className="form-group">
               <label>Username:</label>
-              <input type="text" placeholder="Username" name="username" />
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Username"
+                name="username"
+              />
             </div>
             <div className="form-group">
               <label>Email:</label>
-              <input type="text" placeholder="Email" name="email" />
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
+                name="email"
+              />
+            </div>
+            <div className="form-group">
+              <label>Password:</label>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="Password"
+                name="password"
+              />
             </div>
             <div className="birth-select">
               <label>Date Of Birth:</label>
@@ -160,85 +164,27 @@ export const Register = () => {
                 <option value={1971}>1971</option>
               </select>
             </div>
-            <div className="country">
-              <label>Country:</label>
-              <select
-                className="form-select"
-                aria-label="Default select example"
-              >
-                <option selected="">Select Menu</option>
-                <option value="Afghanistan">Afghanistan</option>
-                <option value="Albania">Albania</option>
-                <option value="Algeria">Algeria</option>
-                <option value="Argentina">Argentina</option>
-                <option value="Australia">Australia</option>
-                <option value="Austria">Austria</option>
-                <option value="Azerbaijan">Azerbaijan</option>
-                <option value="Bahamas">Bahamas</option>
-                <option value="Bangladesh">Bangladesh</option>
-                <option value="Belarus">Belarus</option>
-                <option value="Belgium">Belgium</option>
-                <option value="Brazil">Brazil</option>
-                <option value="Bulgaria">Bulgaria</option>
-                <option value="Canada">Canada</option>
-                <option value="Chile">Chile</option>
-                <option value="China">China</option>
-                <option value="Colombia">Colombia</option>
-                <option value="Denmark">Denmark</option>
-                <option value="Ecuador">Ecuador</option>
-                <option value="Egypt">Egypt</option>
-                <option value="Estonia">Estonia</option>
-                <option value="Ethiopia">Ethiopia</option>
-                <option value="Finland">Finland</option>
-                <option value="France">France</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Germany">Germany</option>
-                <option value="Hungary">Hungary</option>
-                <option value="Iceland">Iceland</option>
-                <option value="India">India</option>
-                <option value="Indonesia">Indonesia</option>
-                <option value="Iran">Iran</option>
-                <option value="Jamaica">Jamaica</option>
-                <option value="Japan">Japan</option>
-                <option value="Kazakhstan">Kazakhstan</option>
-                <option value="Kenya">Kenya</option>
-                <option value="Laos">Laos</option>
-              </select>
-            </div>
             <div className="form-group">
-              <label>Address:</label>
-              <input type="text" name="Address" />
-            </div>
-            <div className="form-group">
-              <label>City:</label>
-              <input type="text" name="City" />
-            </div>
-            <div className="form-group">
-              <label>Province:</label>
-              <input type="text" name="Province" />
-            </div>
-            <div className="form-group">
-              <label>Postal Code</label>
-              <input type="text" name="Postal" />
-            </div>
-            <div className="form-group">
-              <label>Email:</label>
-              <input type="text" name="email" />
-            </div>
-            <div className="form-group">
-              <label>Phone Number:</label>
-              <input type="text" name="number" />
-            </div>
-            <div className="form-group">
-              <button className="d-block default-button">
-                <span>Get Started Now</span>
+              <button onClick={register} className="d-block default-button">
+                <span>Register Now</span>
               </button>
             </div>
-          </form>
+          </div>
           <div className="account-bottom">
             <span className="d-block cate pt-10">
-              Are you a member? <Link to="/Login">Login</Link>
+              Already have an account? <Link to="/Login">Login</Link>
             </span>
+            <span class="or">
+              <span>or</span>
+            </span>
+            <h5 class="subtitle">Register With Google</h5>
+            <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center mt-4">
+              <li>
+                <button onClick={signInWithGoogle}>
+                  <img src="assets/images/match/social-1.png" alt="vimeo" />
+                </button>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

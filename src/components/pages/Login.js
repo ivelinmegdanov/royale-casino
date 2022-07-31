@@ -1,38 +1,78 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import {
+  auth,
+  logInWithEmailAndPassword,
+  signInWithGoogle,
+} from "../../firebase";
 
 export const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [user, loading, error] = useAuthState(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (loading) {
+      // loading screen
+      return;
+    }
+    if (user) navigate("/");
+  }, [user, loading]);
   return (
     <div className="login-section padding-top padding-bottom">
       <div className=" container">
         <div className="account-wrapper">
           <h3 className="title">Login</h3>
-          <form className="account-form text-start">
+          <div class="account-form text-start">
             <div className="form-group">
               <label>Email:</label>
-              <input type="text" name="email" />
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+              />
             </div>
             <div className="form-group">
               <label>Password:</label>
-              <input type="password" name="password" />
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                name="password"
+              />
             </div>
             <div className="form-group">
               <div className="d-flex justify-content-between flex-wrap pt-sm-2">
-                <div className="checkgroup">
-                  <input type="checkbox" name="remember" id="remember" />
-                  <label htmlFor="remember">Remember Me</label>
-                </div>
+                <Link to="/reset">Forgot Password?</Link>
               </div>
             </div>
             <div className="form-group">
-              <button className="d-block default-button">
-                <span>Submit Now</span>
+              <button
+                className="d-block default-button"
+                onClick={() => logInWithEmailAndPassword(email, password)}
+              >
+                <span>Login Now</span>
               </button>
             </div>
-          </form>
+          </div>
           <div className="account-bottom">
             <span className="d-block cate pt-10">
-              Don't Have any Account? <Link to="/register"> Sign Up</Link>
+              Don't Have an Account? <Link to="/register"> Register now. </Link>
             </span>
+            <span class="or">
+              <span>or</span>
+            </span>
+            <h5 class="subtitle">Login with Google</h5>
+            <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center mt-4">
+              <button
+                className="login__btn login__google"
+                onClick={signInWithGoogle}
+              >
+                <img src="assets/images/match/social-1.png" alt="vimeo" />
+              </button>
+            </ul>
           </div>
         </div>
       </div>

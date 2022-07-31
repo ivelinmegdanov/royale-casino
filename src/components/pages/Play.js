@@ -4,14 +4,13 @@ import { PlayGame } from "../playgame/PlayGame";
 
 export const Play = () => {
   const { gameId } = useParams();
-    console.log(gameId);
 
   const {
     data: games,
     isPending,
     error,
   } = useFetch(
-    "https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games/-N8DZBd5QfV6uSsPwOuS.json"
+    "https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games/-N8J2jMp_09UfqW0pXh2.json"
   );
 
   let game;
