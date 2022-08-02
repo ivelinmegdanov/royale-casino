@@ -61,11 +61,11 @@ export const Login = () => {
             <span className="d-block cate pt-10">
               Don't Have an Account? <Link to="/register"> Register now. </Link>
             </span>
-            <span class="or">
+            <span className="or">
               <span>or</span>
             </span>
-            <h5 class="subtitle">Login with Google</h5>
-            <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center mt-4">
+            <h5 className="subtitle">Login with Google</h5>
+            <ul className="match-social-list d-flex flex-wrap align-items-center justify-content-center mt-4">
               <button
                 className="login__btn login__google"
                 onClick={signInWithGoogle}

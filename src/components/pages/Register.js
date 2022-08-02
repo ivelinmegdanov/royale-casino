@@ -174,11 +174,11 @@ export const Register = () => {
             <span className="d-block cate pt-10">
               Already have an account? <Link to="/Login">Login</Link>
             </span>
-            <span class="or">
+            <span calssName="or">
               <span>or</span>
             </span>
-            <h5 class="subtitle">Register With Google</h5>
-            <ul class="match-social-list d-flex flex-wrap align-items-center justify-content-center mt-4">
+            <h5 calssName="subtitle">Register With Google</h5>
+            <ul calssName="match-social-list d-flex flex-wrap align-items-center justify-content-center mt-4">
               <li>
                 <button onClick={signInWithGoogle}>
                   <img src="assets/images/match/social-1.png" alt="vimeo" />
