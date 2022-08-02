@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
 
 export const NotFound = () => {
   return (
-    <section className="fore-zero padding-top padding-bottom">
+    <motion.section className="fore-zero padding-top padding-bottom" intial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
       <div className="container">
         <div className="section-wrapper">
           <div className="zero-item">
@@ -24,6 +25,6 @@ export const NotFound = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

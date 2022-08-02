@@ -2921,9 +2921,8 @@ ul li {
   transition: 1s ease;
 }
 .allgames-game {
-  width: 350px;
-  height: 350px;
-  padding: 25px;
+  width: 282px;
+  height: 200px;
 }
 .game-list {
   display: flex;

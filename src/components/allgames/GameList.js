@@ -4,11 +4,15 @@ export const GameList = (props) => {
     const games = props.games;
 
     return ( 
-        <div className="game-list">
+      <div
+      className="row g-4 justify-content-center collection-grid"
+      style={{ position: "relative" }}
+    >
             {games.map((game) => (
               <div
                 className="allgames-game"
                 key={game.id}
+                data-item={game.provider}
               >
                 <div className="game__item item-layer">
                   <div className="game__inner text-center p-0">
@@ -22,7 +26,7 @@ export const GameList = (props) => {
                     <div className="game__overlay">
                       <h4>{game.title}</h4>
                       <p>{game.author}</p>
-                      <Link to="/play" className="default-button">
+                      <Link to={`/play/${game.id}`} className="default-button">
                         <span>
                           play now <i className="icofont-circled-right" />
                         </span>{" "}

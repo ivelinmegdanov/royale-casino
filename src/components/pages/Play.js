@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useFetch } from "../customhooks/useFetch";
 import { PlayGame } from "../playgame/PlayGame";
+import { motion } from "framer-motion";
 
 export const Play = () => {
   const { gameId } = useParams();
@@ -15,14 +16,14 @@ export const Play = () => {
 
   let game;
   if(games){
-    game = games.find(x => x.id == gameId);
+    game = games.find(x => x.id === gameId);
   }
 
   return (
-    <div>
+    <motion.div  intial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {game && <PlayGame game={game} />}
-    </div>
+    </motion.div>
   );
 };

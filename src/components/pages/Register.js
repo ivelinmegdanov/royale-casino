@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import {
   auth,
   registerWithEmailAndPassword,
@@ -22,7 +23,7 @@ export const Register = () => {
     if (user) navigate("/");
   }, [user, loading]);
   return (
-    <div className="login-section padding-top padding-bottom">
+    <motion.div className="login-section padding-top padding-bottom"  intial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
       <div className=" container">
         <div className="account-wrapper">
           <h3 className="title">Register Now</h3>
@@ -188,6 +189,6 @@ export const Register = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };

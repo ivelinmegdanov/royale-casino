@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { auth, sendPasswordReset } from "../../firebase";
+import { motion } from "framer-motion";
 
 function Reset() {
     const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ function Reset() {
       if (user) navigate("/dashboard");
     }, [user, loading]);
     return (
-      <div className="reset">
+      <motion.div className="reset" intial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
         <div className="reset__container">
           <input
             type="text"
@@ -31,7 +32,7 @@ function Reset() {
             Don't have an account? <Link to="/register">Register</Link> now.
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   }
   export default Reset;
