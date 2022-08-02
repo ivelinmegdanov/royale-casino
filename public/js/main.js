@@ -99,6 +99,7 @@
 
 
         //====Player slider================
+        // eslint-disable-next-line no-undef
         var swiper = new Swiper(".player-slider", {
             slidesPerView: 5,
             spaceBetween: 20,
@@ -130,6 +131,7 @@
 
 
         //====testimonial slider================
+        // eslint-disable-next-line no-undef
         var swiper = new Swiper(".testimonial-slider", {
             slidesPerView: 1,
             spaceBetween: 0,
@@ -277,6 +279,7 @@
 
 
         // post thumb slider
+        // eslint-disable-next-line no-undef
         var swiper = new Swiper('.post-thumb-container', {
             slidesPerView: 1,
             autoplay: {
@@ -292,6 +295,7 @@
 
 
         // post thumb slider
+        // eslint-disable-next-line no-undef
         var swiper = new Swiper('.banner__slider', {
             slidesPerView: 1,
             autoplay: {
@@ -362,6 +366,7 @@
         });
         // product single thumb slider
         $(function() {
+            // eslint-disable-next-line no-undef
             var galleryThumbs = new Swiper('.pro-single-thumbs', {
                 spaceBetween: 10,
                 slidesPerView: 3,
@@ -375,6 +380,7 @@
                 prevEl: '.pro-single-prev',
                 },
             });
+            // eslint-disable-next-line no-undef
             var galleryTop = new Swiper('.pro-single-top', {
                 spaceBetween: 10,
                 loop:true,
@@ -489,4 +495,5 @@
         });
     });
 
+// eslint-disable-next-line no-undef
 }(jQuery));
