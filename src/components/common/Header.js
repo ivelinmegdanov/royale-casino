@@ -30,72 +30,14 @@ export const Header = () => {
                       <li>
                         <Link to="/">Home</Link>
                       </li>
-
-                      <li>
-                        <a href="#0">Features</a>
-                        <ul className="submenu">
-                          <li>
-                            <a href="about.html">About</a>
-                          </li>
-                          <li>
-                            <a href="jaqpot.html">Casino Jackpot</a>
-                          </li>
-                          <li>
-                            <a href="#0">games</a>
-                            <ul className="submenu">
-                              <li>
-                                <a href="game-list.html">game list 1</a>
-                              </li>
-                              <li>
-                                <a href="game-list2.html">game list 2</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="partners.html">partners</a>
-                          </li>
-                          <li>
-                            <a href="pricing-plan.html">Pricing Plan</a>
-                          </li>
-
-                          <li>
-                            <a href="#0">accounts</a>
-                            <ul className="submenu">
-                              <li>
-                                <a href="login.html">login</a>
-                              </li>
-                              <li>
-                                <a href="signup.html">signup</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="#0">Shop</a>
-                            <ul className="submenu">
-                              <li>
-                                <a href="shop.html">shop</a>
-                              </li>
-                              <li>
-                                <a href="shop-single.html">Shop Details</a>
-                              </li>
-                              <li>
-                                <a href="cart-page.html">Cart Page</a>
-                              </li>
-                            </ul>
-                          </li>
-                          <li>
-                            <a href="404.html">404 Page</a>
-                          </li>
-                        </ul>
-                      </li>
                       <li>
                         <Link to="/games">games</Link>
                       </li>
                       <li>
-                        <a href="tournament.html">promotions</a>
+                        <Link to="/promotions">promotions</Link>
                       </li>
                       <li>
-                        <a href="contact.html">Contact</a>
+                        <Link to="/contact">Contact</Link>
                       </li>
                     </ul>
 

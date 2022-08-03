@@ -1,5 +1,6 @@
 import { useFetch } from "../customhooks/useFetch";
 import { JackpotGame } from "./JackpotGame";
+import { Link } from "react-router-dom";
 
 export const Jackpot = () => {
   const {
@@ -7,7 +8,7 @@ export const Jackpot = () => {
     isPending,
     error,
   } = useFetch(
-    "https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games/-N8TgZ879q6xxXpIumul.json"
+    "https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games.json"
   );
   return (
     <div className="jaqport padding-top padding-bottom">
@@ -26,33 +27,14 @@ export const Jackpot = () => {
                 <div className="jaqport__top">
                   <div className="jaqport__title">
                     <div className="jaqport__title-title">
-                      <h4>NEW GAMES IN</h4>
+                      <h4>Running Jackpots - TOP GAMES</h4>
                     </div>
-                    <div className="jaqport__title-gametime">
-                      <ul
-                        className="countdown count-down"
-                        data-date="Nove 01, 2022 00:00:00"
-                      >
-                        <li className="clock-item">
-                          <span className="count-number days">1</span>
-                          <p className="count-text">Days</p>
-                        </li>
-
-                        <li className="clock-item">
-                          <span className="count-number hours">1</span>
-                          <p className="count-text">Hour</p>
-                        </li>
-
-                        <li className="clock-item">
-                          <span className="count-number minutes">1</span>
-                          <p className="count-text">Minu</p>
-                        </li>
-
-                        <li className="clock-item">
-                          <span className="count-number seconds">1</span>
-                          <p className="count-text">Seco</p>
-                        </li>
-                      </ul>
+                    <div class="jaqport__title-button">
+                      <Link to="/games" class="default-button">
+                        <span>
+                          browse all games <i class="icofont-circled-right"></i>
+                        </span>
+                      </Link>
                     </div>
                   </div>
                   <div className="jaqport__body">

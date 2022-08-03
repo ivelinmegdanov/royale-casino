@@ -7,6 +7,8 @@ import { Register } from "../pages/Register";
 import Reset from "../pages/Reset";
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { Promotions } from "../pages/Promotions";
+import { Contact } from "../pages/Contact";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -17,6 +19,8 @@ export const AnimatedRoutes = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/reset" element={<Reset />}></Route>
+        <Route path="/promotions" element={<Promotions />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
         <Route path="/games" element={<Allgames />}></Route>
         <Route path="/play/:gameId" element={<Play />}></Route>
         <Route path="*" element={<NotFound />}></Route>

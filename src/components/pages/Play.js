@@ -11,12 +11,14 @@ export const Play = () => {
     isPending,
     error,
   } = useFetch(
-    "https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games/-N8J2jMp_09UfqW0pXh2.json"
+    "https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games.json"
   );
 
   let game;
   if(games){
-    game = games.find(x => x.id === gameId);
+      let holder = Object.values(games);
+      game = holder.find(x => x.id === gameId);
+      console.log(game.game);
   }
 
   return (
