@@ -41,15 +41,13 @@ export const Comment = (game) => {
         }) => console.log("push data", data)}
         currentData={(data: any) => {
           console.log("cqla", data);
-          if (data.replies) {
-            fetch(
-              `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/comment/${gameId}/.json`,
-              {
-                method: "PUT",
-                body: JSON.stringify(data),
-              }
-            );
-          }
+          fetch(
+            `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/comment/${gameId}/.json`,
+            {
+              method: "PUT",
+              body: JSON.stringify(data),
+            }
+          );
         }}
       />
     )
