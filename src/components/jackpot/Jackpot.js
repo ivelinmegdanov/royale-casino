@@ -15,10 +15,7 @@ export const Jackpot = () => {
       <div className="container">
         <div className="section-header">
           <h2>MOST POPULAR GAMES</h2>
-          <p>
-            At Modeltheme, we show only the best websites and portfolios built
-            completely with passion, simplicity and creativity !
-          </p>
+          <p>Play our most popular casino games and win one of the biggest Jackpots today!</p>
         </div>
         <div className="section-wrapper">
           <div className="row">
@@ -29,10 +26,10 @@ export const Jackpot = () => {
                     <div className="jaqport__title-title">
                       <h4>Running Jackpots - TOP GAMES</h4>
                     </div>
-                    <div class="jaqport__title-button">
-                      <Link to="/games" class="default-button">
+                    <div className="jaqport__title-button">
+                      <Link to="/games" className="default-button">
                         <span>
-                          browse all games <i class="icofont-circled-right"></i>
+                          browse all games <i className="icofont-circled-right"></i>
                         </span>
                       </Link>
                     </div>

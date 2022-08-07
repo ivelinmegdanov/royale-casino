@@ -1,4 +1,5 @@
 import { initializeApp } from "firebase/app";
+import { getDatabase, ref, set } from "firebase/database";
 
 import {
   GoogleAuthProvider,
@@ -36,6 +37,15 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const googleProvider = new GoogleAuthProvider();
 
+auth.onAuthStateChanged(user => {
+  if (user){
+    console.log(user)
+  }
+  else{
+    console.log(user)
+  }
+})
+
 const signInWithGoogle = async () => {
   try {
     const res = await signInWithPopup(auth, googleProvider);
@@ -47,11 +57,10 @@ const signInWithGoogle = async () => {
         uid: user.uid,
         name: user.displayName,
         authProvider: "google",
-        email: user.email,
+        email: user.email
       });
     }
   } catch (err) {
-    alert(err.message);
   }
 };
 
@@ -74,8 +83,6 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       email,
     });
   } catch (err) {
-    console.error(err);
-    alert(err.message);
   }
 };
 
@@ -84,8 +91,6 @@ const sendPasswordReset = async (email) => {
     await sendPasswordResetEmail(auth, email);
     alert("Password reset link sent!");
   } catch (err) {
-    console.error(err);
-    alert(err.message);
   }
 };
 
@@ -100,5 +105,5 @@ export {
   logInWithEmailAndPassword,
   registerWithEmailAndPassword,
   sendPasswordReset,
-  logout,
+  logout
 };

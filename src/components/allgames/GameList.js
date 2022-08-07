@@ -21,7 +21,7 @@ export const GameList = (props) => {
               </div>
               <div className="game__overlay">
                 <h4>{game.title}</h4>
-                <p>{game.author}</p>
+                <p>Rating: {game.rating}</p>
                 <Link to={`/play/${game.id}`} className="default-button">
                   <span>
                     play now <i className="icofont-circled-right" />

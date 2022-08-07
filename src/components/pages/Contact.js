@@ -13,15 +13,12 @@ export const Contact = () => {
               <div className="contact-form-wrapper text-center">
                 <div className="section-header">
                   <h2>
-                    Fill The Form Below So We Can Get To Know You And Your Needs
-                    Better.
+                    Fill The Form Below.
                   </h2>
                 </div>
                 <form
                   className="contact-form"
-                  action="contact.php"
                   id="contact-form"
-                  method="POST"
                 >
                   <div className="form-group">
                     <input
@@ -70,12 +67,11 @@ export const Contact = () => {
                     />
                   </div>
                   <div className="form-group w-100 text-center">
-                    <button className="default-button" type="submit">
-                      <span>Send our Message</span>
+                    <button className="default-button">
+                      <span>Send us a Message</span>
                     </button>
                   </div>
                 </form>
-                <p className="form-message" />
               </div>
             </div>
           </div>
@@ -87,11 +83,10 @@ export const Contact = () => {
             <div className="col-12">
               <div className="location-map">
                 <div id="map">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d423283.4355669374!2d-118.69192993092697!3d34.02073049448939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1633958856057!5m2!1sen!2sbd"
-                    allowFullScreen=""
-                    loading="lazy"
-                  />
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4807.509000247004!2d25.632965042885733!3d43.08067378650393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a92610bab77871%3A0x12127b861a32ba6!2zNTAwMCDQktC10LvQuNC60L4g0KLRitGA0L3QvtCy0L4g0KbQtdC90YLRitGALCDQktC10LvQuNC60L4g0KLRitGA0L3QvtCy0L4!5e0!3m2!1sbg!2sbg!4v1659873165551!5m2!1sbg!2sbg"
+                    allowfullscreen=""
+                    loading="lazy" />
                 </div>
               </div>
             </div>

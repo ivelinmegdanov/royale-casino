@@ -2032,7 +2032,12 @@ progress {
 textarea.form-control {
   min-height: calc(1.5em + 0.75rem + 2px);
 }
-.promotions{
+.footers {
+  flex: 0 0 auto;
+  width: 100%;
+  text-align: center;
+}
+.promotions {
   width: 30% !important;
 }
 textarea.form-control-sm {

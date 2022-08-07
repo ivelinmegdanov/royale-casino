@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Banner = () => {
   return (
     <div className="banner__slider overflow-hidden">
@@ -16,11 +18,11 @@ export const Banner = () => {
                       stated in the promotion. Find your bonus in the profile.
                       Contact us if you have questions.
                     </p>
-                    <a href="login.html" className="default-button">
+                    <Link to="/promotions" className="default-button">
                       <span>
-                        register now <i className="icofont-play-alt-1"></i>
+                        About Bonus <i className="icofont-play-alt-1"></i>
                       </span>{" "}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -41,11 +43,11 @@ export const Banner = () => {
                       as stated in the promotion. Find your bonus in the
                       profile. Contact us if you have questions.
                     </p>
-                    <a href="login.html" className="default-button">
+                    <Link to="/promotions" className="default-button">
                       <span>
-                        Login now <i className="icofont-play-alt-1"></i>
+                        About Bonus <i className="icofont-play-alt-1"></i>
                       </span>{" "}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -66,11 +68,11 @@ export const Banner = () => {
                       as stated in the promotion. Find your bonus in the
                       profile. Contact us if you have questions.
                     </p>
-                    <a href="login.html" className="default-button">
+                    <Link to="/promotions" className="default-button">
                       <span>
-                        Login now <i className="icofont-play-alt-1"></i>
+                        About Bonus <i className="icofont-play-alt-1"></i>
                       </span>{" "}
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

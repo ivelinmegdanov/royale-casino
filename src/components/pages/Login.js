@@ -25,7 +25,7 @@ export const Login = () => {
       <div className=" container">
         <div className="account-wrapper">
           <h3 className="title">Login</h3>
-          <div class="account-form text-start">
+          <div className="account-form text-start">
             <div className="form-group">
               <label>Email:</label>
               <input

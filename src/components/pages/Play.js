@@ -1,9 +1,23 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useFetch } from "../customhooks/useFetch";
 import { PlayGame } from "../playgame/PlayGame";
 import { motion } from "framer-motion";
+import { useEffect } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../firebase";
+import { Comment } from "../comments/Comment"
 
 export const Play = () => {
+  const [user, loading] = useAuthState(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (loading) {
+      // loading screen
+      return;
+    }
+    if (!user) navigate("/login");
+  }, [user, loading]);
+
   const { gameId } = useParams();
 
   const {
@@ -18,7 +32,6 @@ export const Play = () => {
   if(games){
       let holder = Object.values(games);
       game = holder.find(x => x.id === gameId);
-      console.log(game.game);
   }
 
   return (
@@ -26,6 +39,7 @@ export const Play = () => {
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {game && <PlayGame game={game} />}
+      {gameId && <Comment gameId={gameId}/>}
     </motion.div>
   );
 };

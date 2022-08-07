@@ -41,7 +41,7 @@ export const Header = () => {
                       </li>
                     </ul>
 
-                    {!user ? <LogAndReg/> : <LogOut/>}
+                    { !user ? <LogAndReg/> : <LogOut/> }
 
                     <div className="header-bar d-lg-none">
                       <span></span>

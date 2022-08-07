@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 export const Allgames = () => {
 
   const { data : games, isPending, error } = useFetch("https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/games.json");
-  console.log(games);
 
   return (
     <motion.section className="collection-section padding-top padding-bottom"  intial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
