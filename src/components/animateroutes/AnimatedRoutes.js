@@ -10,6 +10,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { Promotions } from "../pages/Promotions";
 import { Contact } from "../pages/Contact";
 import { Profile } from "../pages/Profile";
+import { Deposit } from "../pages/Deposit";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -20,6 +21,7 @@ export const AnimatedRoutes = () => {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/reset" element={<Reset />}></Route>
+        <Route path="/deposit" element={<Deposit />}></Route>
         <Route path="/promotions" element={<Promotions />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/games" element={<Allgames />}></Route>
