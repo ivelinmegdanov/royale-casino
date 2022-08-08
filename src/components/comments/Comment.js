@@ -10,11 +10,15 @@ export const Comment = (game) => {
 
   const gameId = game.gameId;
 
-  const { data } = useFetch(
+  let { data } = useFetch(
     `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/comment/${gameId}/.json`
   );
 
-  console.log(data);
+  if(data){
+    if(!data[0].replies){
+      data[0].replies = [];
+    }
+  }
 
   return (
     user && (
