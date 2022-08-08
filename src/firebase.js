@@ -9,6 +9,7 @@ import {
   createUserWithEmailAndPassword,
   sendPasswordResetEmail,
   signOut,
+  updateProfile
 } from "firebase/auth";
 
 import {
@@ -53,6 +54,18 @@ const signInWithGoogle = async () => {
     const q = query(collection(db, "users"), where("uid", "==", user.uid));
     const docs = await getDocs(q);
     if (docs.docs.length === 0) {
+      const data = {
+        balance: 0.00,
+        isAdmin: false,
+        firstTimeDeposit: true
+      }
+      await fetch(
+        `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/users/${user.uid}.json`,
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+        }
+      );
       await addDoc(collection(db, "users"), {
         uid: user.uid,
         name: user.displayName,
@@ -72,10 +85,25 @@ const logInWithEmailAndPassword = async (email, password) => {
   }
 };
 
-const registerWithEmailAndPassword = async (name, email, password) => {
+const registerWithEmailAndPassword = async (name, email, password, phoneNumber) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
     const user = res.user;
+    const photoURL = "https://www.pngitem.com/pimgs/m/35-350426_profile-icon-png-default-profile-picture-png-transparent.png";
+    const data = {
+      phoneNumber: phoneNumber,
+      balance: 0.00,
+      isAdmin: false,
+      firstTimeDeposit: true
+    }
+    await fetch(
+      `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/users/${user.uid}.json`,
+      {
+        method: "POST",
+        body: JSON.stringify(data),
+      }
+    );
+    await updateProfile(user, { displayName: name, photoURL: photoURL, phoneNumber: phoneNumber})
     await addDoc(collection(db, "users"), {
       uid: user.uid,
       name,

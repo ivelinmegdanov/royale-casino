@@ -12,11 +12,12 @@ export const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
   const register = () => {
     if (!name) alert("Please enter name");
-    registerWithEmailAndPassword(name, email, password);
+    registerWithEmailAndPassword(name, email, password, phoneNumber);
   };
   useEffect(() => {
     if (loading) return;
@@ -46,6 +47,16 @@ export const Register = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
                 name="email"
+              />
+            </div>
+            <div className="form-group">
+              <label>Phone Number:</label>
+              <input
+                type="number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                placeholder="PhoneNumber"
+                name="PhoneNumber"
               />
             </div>
             <div className="form-group">

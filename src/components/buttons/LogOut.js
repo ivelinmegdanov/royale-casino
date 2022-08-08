@@ -19,12 +19,14 @@ export const LogOut = () => {
         <a>Profile</a>
         <ul className="submenu">
           <li>
-            <a>{user.displayName}</a>
+            {error && <a>{error}</a>}
+            {isPending && <a>Loading...</a>}
+            {users && <a>{user.displayName}</a>}
           </li>
           <li>
             {error && <a>{error}</a>}
             {isPending && <a>Loading...</a>}
-            {users &&  <a>Balance: {users.balance}$</a>}
+            {users && <a>Balance: {Object.values(users)[0].balance}$</a>}
           </li>
           <li>
             <Link to={`/profile/${user.uid}`}>My Profile</Link>
