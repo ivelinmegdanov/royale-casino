@@ -46,7 +46,7 @@ export const Profile = () => {
             </div>
             <div className="form-group">
               <label>Balance:</label>
-              <input type="text" name="balance" value={userProps.balance.toFixed(2) + " $"} disabled/>
+              <input type="text" name="balance" value={userProps.balance + " $"} disabled/>
             </div>
             <div className="form-group">
               <label>Role:</label>

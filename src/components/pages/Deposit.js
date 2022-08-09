@@ -3,6 +3,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
+import { useFetch } from "../customhooks/useFetch";
+import { depositNow, log } from "../../deposit";
+import { DepositHistory } from "../depositHistory/DepositHistory";
 
 export const Deposit = () => {
   const navigate = useNavigate();
@@ -16,69 +19,36 @@ export const Deposit = () => {
   }, [user, loading]);
 
   const [deposit, setDeposit] = useState("");
-  const [address, setAddress] = useState("");
-  const [country, setCountry] = useState("");
-  const [zip, setZip] = useState("");
 
-  const buy = () => {};
+  const buy = () => {
+    if (!user.uid || !deposit || deposit < 10 || deposit > 5000) {
+      alert("Enter ammout between 10$ and 5000$");
+    } else {
+      depositNow(deposit, user.uid);
+      log(deposit, user.uid);
+      navigate("/");
+    }
+  };
+
+  let url;
+  if (user) {
+    url = `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/purchaseHistory/${user.uid}.json`;
+  }
+  const { data: purchaseHistory, isPending, error } = useFetch(url);
+  console.log(purchaseHistory);
 
   return (
     <motion.div
-      class="shop-cart padding-top padding-bottom"
+      className="shop-cart padding-top padding-bottom"
       ntial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <div class="container">
+      <div className="container">
         <div className="section-wrapper">
           <div className="cart-bottom">
-            <div className="cart-checkout-box">
-              <form className="coupon">
-                <input
-                  type="text"
-                  name="coupon"
-                  placeholder="Coupon Code..."
-                  className="cart-page-input-text"
-                />
-                <button type="submit" className="default-button ms-2 px-4">
-                  <span>Apply</span>
-                </button>
-              </form>
-            </div>
             <div className="shiping-box">
               <div className="row">
-                <div className="col-md-6 col-12">
-                  <div className="calculate-shiping">
-                    <h3>Details</h3>
-                    <div className="outline-select">
-                      <input
-                        type="text"
-                        name="address"
-                        placeholder="Billing Address"
-                        value={address}
-                        onChange={(e) => setAddress(e.target.value)}
-                      />
-                    </div>
-                    <div className="outline-select shipping-select">
-                      <input
-                        type="text"
-                        name="Country"
-                        placeholder="Country"
-                        value={country}
-                        onChange={(e) => setCountry(e.target.value)}
-                      />
-                    </div>
-                    <div className="outline-select shipping-select">
-                      <input
-                        type="text"
-                        name="ZIP"
-                        placeholder="ZIP"
-                        value={zip}
-                        onChange={(e) => setZip(e.target.value)}
-                      />
-                    </div>
-                  </div>
-                </div>
                 <div className="col-md-6 col-12">
                   <div className="cart-overview">
                     <h3>Deposit</h3>
@@ -114,169 +84,17 @@ export const Deposit = () => {
             <table>
               <thead>
                 <tr>
-                  <th className="cat-product">Product</th>
-                  <th className="cat-price">Price</th>
+                  <th className="cat-product">Uer</th>
+                  <th className="cat-price">Ammount</th>
                   <th className="cat-quantity">Quantity</th>
-                  <th className="cat-toprice">Total</th>
-                  <th className="cat-edit">Edit</th>
+                  <th className="cat-toprice">Date</th>
+                  <th className="cat-edit">Bonus</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="product-item cat-product">
-                    <div className="p-thumb">
-                      <a href="#">
-                        <img src="assets/images/shop/01.jpg" alt="product" />
-                      </a>
-                    </div>
-                    <div className="p-content">
-                      <a href="#">Product Text Here</a>
-                    </div>
-                  </td>
-                  <td className="cat-price">$250</td>
-                  <td className="cat-quantity">
-                    <div className="cart-plus-minus">
-                      <div className="dec qtybutton">-</div>
-                      <input
-                        className="cart-plus-minus-box"
-                        type="text"
-                        name="qtybutton"
-                        defaultValue={3}
-                      />
-                      <div className="inc qtybutton">+</div>
-                    </div>
-                  </td>
-                  <td className="cat-toprice">$750</td>
-                  <td className="cat-edit">
-                    <a href="#">
-                      <img src="assets/images/shop/del.png" alt="product" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="product-item cat-product">
-                    <div className="p-thumb">
-                      <a href="#">
-                        <img src="assets/images/shop/02.jpg" alt="product" />
-                      </a>
-                    </div>
-                    <div className="p-content">
-                      <a href="#">Product Text Here</a>
-                    </div>
-                  </td>
-                  <td className="cat-price">$250</td>
-                  <td className="cat-quantity">
-                    <div className="cart-plus-minus">
-                      <div className="dec qtybutton">-</div>
-                      <input
-                        className="cart-plus-minus-box"
-                        type="text"
-                        name="qtybutton"
-                        defaultValue={2}
-                      />
-                      <div className="inc qtybutton">+</div>
-                    </div>
-                  </td>
-                  <td className="cat-toprice">$500</td>
-                  <td className="cat-edit">
-                    <a href="#">
-                      <img src="assets/images/shop/del.png" alt="product" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="product-item cat-product">
-                    <div className="p-thumb">
-                      <a href="#">
-                        <img src="assets/images/shop/03.jpg" alt="product" />
-                      </a>
-                    </div>
-                    <div className="p-content">
-                      <a href="#">Product Text Here</a>
-                    </div>
-                  </td>
-                  <td className="cat-price">$50</td>
-                  <td className="cat-quantity">
-                    <div className="cart-plus-minus">
-                      <div className="dec qtybutton">-</div>
-                      <input
-                        className="cart-plus-minus-box"
-                        type="text"
-                        name="qtybutton"
-                        defaultValue={2}
-                      />
-                      <div className="inc qtybutton">+</div>
-                    </div>
-                  </td>
-                  <td className="cat-toprice">$100</td>
-                  <td className="cat-edit">
-                    <a href="#">
-                      <img src="assets/images/shop/del.png" alt="product" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="product-item cat-product">
-                    <div className="p-thumb">
-                      <a href="#">
-                        <img src="assets/images/shop/04.jpg" alt="product" />
-                      </a>
-                    </div>
-                    <div className="p-content">
-                      <a href="#">Product Text Here</a>
-                    </div>
-                  </td>
-                  <td className="cat-price">$100</td>
-                  <td className="cat-quantity">
-                    <div className="cart-plus-minus">
-                      <div className="dec qtybutton">-</div>
-                      <input
-                        className="cart-plus-minus-box"
-                        type="text"
-                        name="qtybutton"
-                        defaultValue={2}
-                      />
-                      <div className="inc qtybutton">+</div>
-                    </div>
-                  </td>
-                  <td className="cat-toprice">$200</td>
-                  <td className="cat-edit">
-                    <a href="#">
-                      <img src="assets/images/shop/del.png" alt="product" />
-                    </a>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="product-item cat-product">
-                    <div className="p-thumb">
-                      <a href="#">
-                        <img src="assets/images/shop/05.jpg" alt="product" />
-                      </a>
-                    </div>
-                    <div className="p-content">
-                      <a href="#">Product Text Here</a>
-                    </div>
-                  </td>
-                  <td className="cat-price">$200</td>
-                  <td className="cat-quantity">
-                    <div className="cart-plus-minus">
-                      <div className="dec qtybutton">-</div>
-                      <input
-                        className="cart-plus-minus-box"
-                        type="text"
-                        name="qtybutton"
-                        defaultValue={2}
-                      />
-                      <div className="inc qtybutton">+</div>
-                    </div>
-                  </td>
-                  <td className="cat-toprice">$400</td>
-                  <td className="cat-edit">
-                    <a href="#">
-                      <img src="assets/images/shop/del.png" alt="product" />
-                    </a>
-                  </td>
-                </tr>
+                {error && <tr>{error}</tr>}
+                {isPending && <tr>Loading...</tr>}
+                {purchaseHistory && <DepositHistory history={purchaseHistory} user={user} />}
               </tbody>
             </table>
           </div>

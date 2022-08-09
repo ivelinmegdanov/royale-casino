@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 export const Promotions = () => {
@@ -54,9 +55,9 @@ export const Promotions = () => {
                           <p>Only for casino games.</p>
                         </li>
                       </ul>
-                      <a href="#" className="default-button">
+                      <Link to="/deposit" className="default-button">
                         <span>- Get Bonus -</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -100,9 +101,9 @@ export const Promotions = () => {
                           <p>Only for casino games.</p>
                         </li>
                       </ul>
-                      <a href="#" className="default-button">
+                      <Link to="/deposit" className="default-button">
                         <span>- Get Bonus -</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -146,9 +147,9 @@ export const Promotions = () => {
                           <p>Only for casino games.</p>
                         </li>
                       </ul>
-                      <a href="#" className="default-button">
+                      <Link to="/deposit" className="default-button">
                         <span>- Get Bonus -</span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
