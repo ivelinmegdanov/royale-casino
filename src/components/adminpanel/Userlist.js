@@ -26,16 +26,16 @@ export const Userlist = () => {
                         <span className="whitey">User</span>
                       </th>
                       <th>
-                        <span className="whitey">Created</span>
+                        <span className="whitey">Number</span>
                       </th>
                       <th className="text-center">
-                        <span className="whitey">Status</span>
+                        <span className="whitey">Balance</span>
                       </th>
                       <th>
                         <span className="whitey">Email</span>
                       </th>
                       <th>
-                        <span className="whitey">Admin/Edit/Delete</span>
+                        <span className="whitey">Make Admin / Delete</span>
                       </th>
                     </tr>
                   </thead>

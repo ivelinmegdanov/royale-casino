@@ -57,7 +57,8 @@ const signInWithGoogle = async () => {
       const data = {
         balance: 0.00,
         isAdmin: false,
-        firstTimeDeposit: true
+        firstTimeDeposit: true,
+        isDeleted: false
       }
       await fetch(
         `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/users/${user.uid}.json`,
@@ -97,7 +98,8 @@ const registerWithEmailAndPassword = async (name, email, password, phoneNumber) 
       firstTimeDeposit: true,
       email: email,
       username: name,
-      photoURL: photoURL
+      photoURL: photoURL,
+      isDeleted: false
     }
     await fetch(
       `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/users/${user.uid}.json`,

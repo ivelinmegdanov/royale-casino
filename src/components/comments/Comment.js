@@ -42,9 +42,8 @@ export const Comment = (game) => {
           text: string,
           replies: any,
           commentId: string,
-        }) => console.log("push data", data)}
+        }) => console.log("pushed")}
         currentData={(data: any) => {
-          console.log("cqla", data);
           fetch(
             `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/comment/${gameId}/.json`,
             {
