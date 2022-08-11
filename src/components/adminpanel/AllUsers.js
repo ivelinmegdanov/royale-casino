@@ -12,11 +12,15 @@ export const AllUsers = (props) => {
             <a href="#" className="user-link blacky">
               Mila Kunis
             </a>
-            <span className="user-subhead">{Object.values(user[1])[0].isAdmin ? "Admin" : "User"}</span>
+            <span className="user-subhead">
+              {Object.values(user[1])[0].isAdmin ? "Admin" : "User"}
+            </span>
           </td>
           <td>{Object.values(user[1])[0].phoneNumber}</td>
           <td className="text-center">
-            <span className="label label-default">{Object.values(user[1])[0].balance} $</span>
+            <span className="label label-default">
+              {Object.values(user[1])[0].balance} $
+            </span>
           </td>
           <td>
             <a href="#" className="blacky">

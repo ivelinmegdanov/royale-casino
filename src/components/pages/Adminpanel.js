@@ -11,24 +11,37 @@ export const Adminpanel = () => {
   const navigate = useNavigate();
   let url;
   if (user) {
-    url = `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/purchaseHistory/${user.uid}.json`;
+    url = `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/users/${user.uid}.json`;
   }
-  const { data : users, isPending, error } = useFetch({url});
+
+  const { data: users, isPending, error } = useFetch(url);
+
+  let userProps;
+  if (users) {
+    userProps = Object.values(users)[0];
+  }
+
+  if (userProps) {
+    if (userProps.isAdmin !== true) {
+      navigate("/");
+    }
+  }
+
   useEffect(() => {
     if (loading) {
       // loading screen
       return;
     }
     if (!user) navigate("/login");
-    if(users){
-      console.log(users);
-    }
   }, [user, loading]);
 
   return (
     <motion.section
       className="pageheader-section"
-      style={{ backgroundImage: "url(https://demos.codexcoder.com/themeforest/html/casina/casina/assets/images/pageheader/bg.jpg)" }}
+      style={{
+        backgroundImage:
+          "url(https://demos.codexcoder.com/themeforest/html/casina/casina/assets/images/pageheader/bg.jpg)",
+      }}
       intial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

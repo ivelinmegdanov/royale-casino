@@ -94,7 +94,10 @@ const registerWithEmailAndPassword = async (name, email, password, phoneNumber) 
       phoneNumber: phoneNumber,
       balance: 0.00,
       isAdmin: false,
-      firstTimeDeposit: true
+      firstTimeDeposit: true,
+      email: email,
+      username: name,
+      photoURL: photoURL
     }
     await fetch(
       `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/users/${user.uid}.json`,

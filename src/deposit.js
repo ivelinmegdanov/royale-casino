@@ -1,3 +1,6 @@
+import { ToastContainer, toast } from 'react-toastify';    
+import 'react-toastify/dist/ReactToastify.css';   
+
 const depositNow = async (ammount, uid) => {
   try {
     if (!ammount || ammount < 10 || ammount > 5000) {
@@ -18,7 +21,7 @@ const depositNow = async (ammount, uid) => {
       if(Object.values(data)[0].firstTimeDeposit){
         Object.values(data)[0].balance += Number(ammount);
         Object.values(data)[0].firstTimeDeposit = false;
-        alert("You got 100% Deposit Bonus");
+        toast.success('Hey, this is a Success Message')
       }
       Object.values(data)[0].balance = Object.values(data)[0].balance.toFixed(2);
     await fetch(
