@@ -11,6 +11,8 @@ import { Promotions } from "../pages/Promotions";
 import { Contact } from "../pages/Contact";
 import { Profile } from "../pages/Profile";
 import { Deposit } from "../pages/Deposit";
+import { Userlist } from "../adminpanel/Userlist";
+import { Adminpanel } from "../pages/Adminpanel";
 
 export const AnimatedRoutes = () => {
   const location = useLocation();
@@ -25,6 +27,8 @@ export const AnimatedRoutes = () => {
         <Route path="/promotions" element={<Promotions />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/games" element={<Allgames />}></Route>
+        <Route path="/adminpanel" element={<Adminpanel />}></Route>
+        <Route path="/adminpanel/userlist" element={<Userlist />}></Route>
         <Route path="/play/:gameId" element={<Play />}></Route>
         <Route path="/profile/:userId" element={<Profile />}></Route>
         <Route path="*" element={<NotFound />}></Route>

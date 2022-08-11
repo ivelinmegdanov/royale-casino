@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import 'swiper/css';
 export const Banner = () => {
   return (
     <div className="banner__slider overflow-hidden">

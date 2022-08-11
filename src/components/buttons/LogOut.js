@@ -37,6 +37,12 @@ export const LogOut = () => {
           </li>
 
           <li>
+            {error && <a>{error}</a>}
+            {isPending && <a>Loading...</a>}
+            {users && Object.values(users)[0].isAdmin && <Link to={`/adminpanel`}>Admin Panel</Link>}
+          </li>
+
+          <li>
             <Link to="/" onClick={logout}>
               Logout
             </Link>

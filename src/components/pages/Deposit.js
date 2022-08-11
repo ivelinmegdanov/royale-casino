@@ -35,7 +35,6 @@ export const Deposit = () => {
     url = `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/purchaseHistory/${user.uid}.json`;
   }
   const { data: purchaseHistory, isPending, error } = useFetch(url);
-  console.log(purchaseHistory);
 
   return (
     <motion.div

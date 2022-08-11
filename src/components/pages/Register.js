@@ -193,7 +193,7 @@ export const Register = () => {
             <ul calssName="match-social-list d-flex flex-wrap align-items-center justify-content-center mt-4">
               <li>
                 <button onClick={signInWithGoogle}>
-                  <img src="assets/images/match/social-1.png" alt="vimeo" />
+                <img src="https://cdn.discordapp.com/attachments/727243562282123355/1007246927991165119/unknown.png" alt="google" />
                 </button>
               </li>
             </ul>

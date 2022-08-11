@@ -71,7 +71,7 @@ export const Login = () => {
                 className="login__btn login__google"
                 onClick={signInWithGoogle}
               >
-                <img src="assets/images/match/social-1.png" alt="vimeo" />
+                <img src="https://cdn.discordapp.com/attachments/727243562282123355/1007246927991165119/unknown.png" alt="google" />
               </button>
             </ul>
           </div>
