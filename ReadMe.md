@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://royale-casino.web.app/images/logo/logo.png">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./public/images/logo/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Royale Casino</h3>
@@ -76,7 +76,7 @@ You can register, login and login with google.
 You can edit and delete your profile.
 Admins can access Admin Panel where you can make other users admins, delete other users and edit other users.
 You can deposit money(demo) to your profile and see you full deposit history.
-And More.
+More...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
