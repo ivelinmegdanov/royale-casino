@@ -18,7 +18,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://royale-casino.web.app)
 
 
 SoftUni Exam 2022 Website on React - Online Casino (not public)
