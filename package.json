@@ -2,7 +2,8 @@
   "name": "royale-casino",
   "version": "0.1.0",
   "engines": {
-    "node": "16.16.0"
+    "node": "16.16.0",
+    "npm": "8.15.0"
   },
   "private": true,
   "dependencies": {
