@@ -51,7 +51,7 @@ To run this application you need the following programs:
 
 ### Installation
 
-1. Clone the repo
+1. Intall all required packages
    ```sh
    npm install
    ```
