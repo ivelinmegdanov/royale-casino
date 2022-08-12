@@ -6791,3 +6791,8 @@ a.span {
   z-index: 2 !important;
   text-decoration: none !important;
 }
+
+input.edit_profile{
+  background-color: #080e37 !important;
+  color: white !important;
+}

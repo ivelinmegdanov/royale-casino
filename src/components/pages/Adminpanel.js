@@ -54,12 +54,6 @@ export const Adminpanel = () => {
               <li className="breadcrumb-item">
                 <Link to="/adminpanel/userlist">Users</Link>
               </li>
-              <li className="breadcrumb-item">
-                <Link to="/adminpanel/gamelist">Games</Link>
-              </li>
-              <li className="breadcrumb-item">
-                <Link to="/adminpanel/depositlist">Deposits</Link>
-              </li>
             </ol>
           </nav>
         </div>

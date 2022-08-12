@@ -15,9 +15,11 @@ export const Comment = (game) => {
   );
 
   if(data){
-    if(!data[0].replies){
-      data[0].replies = [];
-    }
+    data.map((comment => {
+      if(!comment.replies){
+        comment.replies = [];
+      }
+    }))
   }
 
   return (

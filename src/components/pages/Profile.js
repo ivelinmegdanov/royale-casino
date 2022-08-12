@@ -39,6 +39,7 @@ export const Profile = () => {
     if (!user) navigate("/login");
     if (userId !== user.uid) navigate("/");
   }, [user, loading]);
+  
   const {
     data: users,
     isPending,
@@ -72,7 +73,7 @@ export const Profile = () => {
                 <input
                   type="text"
                   name="Username"
-                  value={user.displayName}
+                  value={userProps.username}
                   disabled
                 />
               </div>

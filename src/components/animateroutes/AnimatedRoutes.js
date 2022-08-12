@@ -11,8 +11,8 @@ import { Promotions } from "../pages/Promotions";
 import { Contact } from "../pages/Contact";
 import { Profile } from "../pages/Profile";
 import { Deposit } from "../pages/Deposit";
+import { Edit } from "../pages/Edit";
 import { Userlist } from "../adminpanel/Userlist";
-import { Depositlist } from "../adminpanel/Depositlist";
 import { Adminpanel } from "../pages/Adminpanel";
 
 export const AnimatedRoutes = () => {
@@ -30,9 +30,9 @@ export const AnimatedRoutes = () => {
         <Route path="/games" element={<Allgames />}></Route>
         <Route path="/adminpanel" element={<Adminpanel />}></Route>
         <Route path="/adminpanel/userlist" element={<Userlist />}></Route>
-        <Route path="/adminpanel/depositlist" element={<Depositlist />}></Route>
         <Route path="/play/:gameId" element={<Play />}></Route>
         <Route path="/profile/:userId" element={<Profile />}></Route>
+        <Route path="/edit/:userId" element={<Edit />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </AnimatePresence>

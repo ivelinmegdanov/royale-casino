@@ -66,9 +66,9 @@ export const Promotions = () => {
                 <div className="price-item">
                   <div className="price-item-inner">
                     <div className="price-top">
-                      <h6>Welcome Bonus</h6>
-                      <h2>100% to 500$</h2>
-                      <p>First Deposit Welcome Bonus up to 500$ and 100 free spins</p>
+                      <h6>Reload Bonus</h6>
+                      <h2>50% to 500$</h2>
+                      <p>Weekend Reload Bonus + 50 Free Spins</p>
                     </div>
                     <div className="price-bottom">
                       <ul>
@@ -112,9 +112,9 @@ export const Promotions = () => {
                 <div className="price-item">
                   <div className="price-item-inner">
                     <div className="price-top">
-                      <h6>Welcome Bonus</h6>
-                      <h2>100% to 500$</h2>
-                      <p>First Deposit Welcome Bonus up to 500$ and 100 free spins</p>
+                      <h6>Cashback Bonus</h6>
+                      <h2>Cashback 10-15%</h2>
+                      <p>Weekly cashback 10-15% up to €500!</p>
                     </div>
                     <div className="price-bottom">
                       <ul>
