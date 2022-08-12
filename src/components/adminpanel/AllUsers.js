@@ -73,7 +73,7 @@ export const AllUsers = (props) => {
             <span className="blacky">{Object.values(user[1])[0].email}</span>
           </td>
           <td style={{ width: "20%" }}>
-            <a
+            <a href
               onClick={() => {
                 makeAdmin(Object.values(user[1])[0], Object.values(user)[0]);
               }}
@@ -84,7 +84,7 @@ export const AllUsers = (props) => {
                 <i className="fa fa-search-plus fa-stack-1x fa-inverse" />
               </span>
             </a>
-            <a
+            <a href
               onClick={() => {
                 deleteUser(Object.values(user[1])[0], Object.values(user)[0]);
               }}

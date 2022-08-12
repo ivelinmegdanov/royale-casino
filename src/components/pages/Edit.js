@@ -66,7 +66,7 @@ export const Edit = () => {
     url = `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/users/${user.uid}.json`;
   }
 
-  const { data: currUser, isPendingCurrUser, errCurrUser } = useFetch(url);
+  const { data: currUser } = useFetch(url);
 
   useEffect(() => {
     if (loading) {

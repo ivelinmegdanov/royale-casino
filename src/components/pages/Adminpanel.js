@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../firebase";
 import { useEffect } from "react";
@@ -14,7 +14,7 @@ export const Adminpanel = () => {
     url = `https://royale-casino-default-rtdb.europe-west1.firebasedatabase.app/users/${user.uid}.json`;
   }
 
-  const { data: users, isPending, error } = useFetch(url);
+  const { data: users } = useFetch(url);
 
   let userProps;
   if (users) {
