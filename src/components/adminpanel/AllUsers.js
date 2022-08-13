@@ -81,7 +81,7 @@ export const AllUsers = (props) => {
             >
               <span className="fa-stack">
                 <i className="fa fa-square fa-stack-2x" />
-                <i className="fa fa-search-plus fa-stack-1x fa-inverse" />
+                <i className="fa fa-lock fa-stack-1x fa-inverse" />
               </span>
             </a>
             <a href
