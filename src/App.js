@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Preloader />
+        {/*<Preloader />*/}
         <ScrollTop />
         <div className="content">
           <AnimatedRoutes />
